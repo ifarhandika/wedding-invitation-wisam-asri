@@ -1,3 +1,21 @@
+//audio
+
+const audio = document.querySelector(".audio")
+const audioBtn = document.querySelector(".audio-btn")
+let count = 0
+
+audio.volume = 0.3
+
+function audioPlayPause() {
+    if (count == 0) {
+        count = 1
+        audio.play()
+    } else {
+        count = 0
+        audio.pause()
+    }
+}
+
 // Countdown Hari Bahagia
 
 function countdownHariBahagia() {
@@ -57,11 +75,11 @@ function addWellWishes() {
         const commentDiv = document.createElement("div")
         commentDiv.classList.add("comment-container")
 
-        const newName = document.createElement('h4')
+        const newName = document.createElement("h4")
         newName.innerText = namaInput.value
         commentDiv.appendChild(newName)
 
-        const newComment = document.createElement('p')
+        const newComment = document.createElement("p")
         newComment.innerText = commentInput.value
         commentDiv.appendChild(newComment)
 
@@ -75,3 +93,22 @@ function addWellWishes() {
 }
 
 addWellWishes()
+
+//Firebase
+
+// var firebaseConfig = {
+//     apiKey: "AIzaSyCOs-b6GjL17VHcA_Te3pf1f-sZIVWcFN8",
+//     authDomain: "wedding-invitation-wisam-asri.firebaseapp.com",
+//     projectId: "wedding-invitation-wisam-asri",
+//     storageBucket: "wedding-invitation-wisam-asri.appspot.com",
+//     messagingSenderId: "321879059888",
+//     appId: "1:321879059888:web:14a38de752f86004577a75",
+// }
+// firebase.initializeApp(firebaseConfig)
+
+
+// function writeData(){
+//     firebase.database().ref("Comment").set({
+//         name: 
+//     })
+// }

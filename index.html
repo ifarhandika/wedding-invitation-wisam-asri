@@ -20,6 +20,13 @@
         <title>Invitation | Wisam & Asri</title>
     </head>
     <body>
+        <audio class="audio" preload="auto" loop autoplay>
+            <source src="berkas nikahan/song.mp3" type="audio/mpeg" />
+        </audio>
+        <button class="audio-btn" onclick="audioPlayPause()">
+            <i class="fas fa-music fa-2x"></i>
+        </button>
+
         <div class="main">
             <div class="main-text">
                 <h2>Wisam & Asri</h2>
@@ -281,7 +288,7 @@
                             ></textarea>
                         </label>
 
-                        <button type="submit" class="add-comment-btn">
+                        <button type="submit" class="add-comment-btn" onclick="writeData()">
                             Kirim
                         </button>
                     </form>
@@ -291,11 +298,9 @@
             </div>
         </div>
 
-        <div class="designed-by flex flex-jc-c flex-ai-c">
-            
-        </div>
+        <div class="designed-by flex flex-jc-c flex-ai-c"></div>
 
-        <script src="script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -311,5 +316,6 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+        <script src="script.js"></script>
     </body>
 </html>
