@@ -17,9 +17,12 @@
   left: 50%;
   transform: translate(-50%, -75%);
   font-family: "Dancing Script", cursive;
-  font-size: 2.5em;
   color: #c7ad8a;
   text-align: center;
+}
+
+.main .main-text h2 {
+  font-size: 3rem;
 }
 
 .main .main-text span {
@@ -110,6 +113,7 @@
 
 .doa .card {
   max-width: 960px;
+  margin: 0 auto;
   padding: 20px 40px;
   border: 2px solid #c7ad8a;
   border-radius: 20px;
@@ -257,7 +261,7 @@
   text-align: center;
   color: black;
   display: inline-block;
-  margin: 10px 20px 50px 20px;
+  margin: 10px 30px 50px 30px;
 }
 
 .hari-bahagia .hari-bahagia-card .hari-bahagia-text .time .box span {
@@ -266,6 +270,104 @@
 
 .hari-bahagia .hari-bahagia-card .hari-bahagia-text .time .box p {
   margin: 10px 0;
+}
+
+@media screen and (max-width: 560px) {
+  .hari-bahagia .hari-bahagia-card .hari-bahagia-text .time .box {
+    margin: 10px 10px 50px 10px;
+  }
+}
+
+.gallery-collection {
+  padding: 0 20px;
+  flex-direction: column;
+}
+
+.gallery-collection .gallery-hero {
+  color: #c7ad8a;
+  padding: 50px 0 30px 0;
+}
+
+.gallery-collection .gallery-container {
+  background-color: #c7ad8a;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.gallery-collection .gallery-container .carousel .carousel-inner .carousel-item img {
+  width: 100%;
+  /* or any custom size */
+  height: 500px;
+  object-fit: contain;
+}
+
+.add-wishes {
+  background-color: #c7ad8a;
+}
+
+.add-wishes .add-wishes-container {
+  margin: 0 50px;
+}
+
+.add-wishes .add-wishes-container .add-wishes-hero {
+  text-align: center;
+  color: beige;
+  padding: 50px 0 30px 0;
+}
+
+.add-wishes .add-wishes-container .form-container {
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.add-wishes .add-wishes-container .form-container input,
+.add-wishes .add-wishes-container .form-container textarea {
+  background: #e6e6d7;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 350px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.add-wishes .add-wishes-container .form-container input::placeholder,
+.add-wishes .add-wishes-container .form-container textarea::placeholder {
+  font-size: 14px;
+}
+
+.add-wishes .add-wishes-container .form-container button {
+  cursor: pointer;
+  width: 350px;
+  margin-bottom: 50px;
+  background-color: beige;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.add-wishes .add-wishes-container .form-container button:hover {
+  background-color: #dadac2;
+}
+
+.add-wishes .add-wishes-container .add-wishes-comment {
+  text-align: center;
+  margin: 0px 30px;
+}
+
+.add-wishes .add-wishes-container .add-wishes-comment .comment-container {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.designed-by {
+  height: 20vh;
+  background-color: #c7ad8a;
+  text-align: center;
 }
 
 * {

@@ -37,4 +37,41 @@ function countdownHariBahagia() {
     }
 }
 
-countdownHariBahagia();
+countdownHariBahagia()
+
+// Adding Prayers and Well Wishes
+
+function addWellWishes() {
+    const namaInput = document.querySelector(".nama-input")
+    const commentInput = document.querySelector(".comment-input")
+    const addCommentBtn = document.querySelector(".add-comment-btn")
+    const addWishesComment = document.querySelector(".add-wishes-comment")
+
+    //event listeners
+    addCommentBtn.addEventListener("click", addComment)
+
+    function addComment(event) {
+        event.preventDefault()
+
+        //add commentDiv
+        const commentDiv = document.createElement("div")
+        commentDiv.classList.add("comment-container")
+
+        const newName = document.createElement('h4')
+        newName.innerText = namaInput.value
+        commentDiv.appendChild(newName)
+
+        const newComment = document.createElement('p')
+        newComment.innerText = commentInput.value
+        commentDiv.appendChild(newComment)
+
+        //append to addwishescomment
+        addWishesComment.appendChild(commentDiv)
+
+        //clear add comments input value
+        namaInput.value = ""
+        commentInput.value = ""
+    }
+}
+
+addWellWishes()
