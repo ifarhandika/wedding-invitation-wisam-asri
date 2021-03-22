@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  height: 15vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar .logo {
+  font-size: 40px;
+  flex-grow: 0.9;
+}
+
+.navbar .menu-icon {
+  cursor: pointer;
+}
+
+.navbar .menu.active {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.navbar .menu-list li {
+  display: inline;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0 15px;
+}
+
+.navbar .menu-list li a {
+  transition: 0.2s ease;
+}
+
+.navbar .menu-list li a:hover {
+  font-size: 30px;
+  color: grey;
+}
+
+.main {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(#0f0f0f, #0a0a0a);
+}
+/*# sourceMappingURL=main.css.map */

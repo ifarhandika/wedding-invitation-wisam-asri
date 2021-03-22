@@ -1,0 +1,23 @@
+.doa{
+    padding: 100px 50px;
+    font-family: 'Open Sans', sans-serif;
+
+    .card{
+        max-width: 960px;
+        padding: 20px 40px;
+        border: 2px solid $secondaryColor;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+        flex-direction: column;
+        color: $secondaryColor;
+        text-align: center;
+
+        h3{
+            font-size: 35px;
+        }
+
+        p{
+            margin: 20px 0;
+        }
+    }
+}
