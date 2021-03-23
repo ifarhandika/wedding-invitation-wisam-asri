@@ -16,6 +16,8 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
         <link rel="stylesheet" href="./styles/style.css" />
         <title>Invitation | Wisam & Asri</title>
     </head>
@@ -266,6 +268,28 @@
             </div>
         </div>
 
+        <div class="informasi flex flex-jc-c flex-ai-c">
+            <div class="container">
+                <div class="informasi-card">
+                    <div class="informasi-hero">
+                        <h4>Informasi</h4>
+                    </div>
+                    <div class="informasi-container">
+                        <p>
+                            Dikarenakan kondisi dan situasi pandemi saat ini,
+                            kami memohon maaf sebesar-besarnya bahwa akad
+                            pernikahan hanya dihadiri oleh keluarga terdekat
+                            kami.
+                        </p>
+                        <span
+                            >Hormat kami, <br />
+                            Wisam & Asri
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="add-wishes">
             <div class="container">
                 <div class="add-wishes-container">
@@ -288,7 +312,7 @@
                             ></textarea>
                         </label>
 
-                        <button type="submit" class="add-comment-btn" onclick="writeData()">
+                        <button type="submit" class="add-comment-btn">
                             Kirim
                         </button>
                     </form>
@@ -298,9 +322,28 @@
             </div>
         </div>
 
-        <div class="designed-by flex flex-jc-c flex-ai-c"></div>
+        <div class="designed-by flex flex-jc-c flex-ai-c">
+            <span
+                >Designed by <br />
+                Hafizh Farhandika N.</span
+            >
+        </div>
 
-        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCOs-b6GjL17VHcA_Te3pf1f-sZIVWcFN8",
+                authDomain: "wedding-invitation-wisam-asri.firebaseapp.com",
+                projectId: "wedding-invitation-wisam-asri",
+                storageBucket: "wedding-invitation-wisam-asri.appspot.com",
+                messagingSenderId: "321879059888",
+                appId: "1:321879059888:web:14a38de752f86004577a75",
+            }
+            firebase.initializeApp(firebaseConfig)
+            const db = firebase.firestore()
+            const getCurrentTimestamp =
+                firebase.firestore.FieldValue.serverTimestamp
+            db.settings({ timestampsInSnapshots: true })
+        </script>
         <script
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

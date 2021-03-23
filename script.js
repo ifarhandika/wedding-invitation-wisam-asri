@@ -1,4 +1,4 @@
-//audio
+//audio--------------------------------------------------------------------------
 
 const audio = document.querySelector(".audio")
 const audioBtn = document.querySelector(".audio-btn")
@@ -16,7 +16,7 @@ function audioPlayPause() {
     }
 }
 
-// Countdown Hari Bahagia
+// Countdown Hari Bahagia---------------------------------------------------------
 
 function countdownHariBahagia() {
     let launchDate = new Date("April 9, 2021 10:00:00").getTime()
@@ -57,7 +57,30 @@ function countdownHariBahagia() {
 
 countdownHariBahagia()
 
-// Adding Prayers and Well Wishes
+//Firebase---------------------------------------------------------------------
+
+const addWishesComment = document.querySelector(".add-wishes-comment")
+const addComment = document.querySelector("#add-comment")
+
+//Getting documents
+function renderComment(doc) {
+    const commentDiv = document.createElement("div")
+    const newName = document.createElement("h4")
+    const newComment = document.createElement("p")
+
+    commentDiv.setAttribute("data-id", doc.id)
+    newName.textContent = doc.data().nama
+    newComment.textContent = doc.data().comment
+
+    commentDiv.classList.add("comment-container")
+
+    commentDiv.appendChild(newName)
+    commentDiv.appendChild(newComment)
+
+    addWishesComment.appendChild(commentDiv)
+}
+
+//Saving Data
 
 function addWellWishes() {
     const namaInput = document.querySelector(".nama-input")
@@ -86,6 +109,11 @@ function addWellWishes() {
         //append to addwishescomment
         addWishesComment.appendChild(commentDiv)
 
+        db.collection("comments").add({
+            nama: namaInput.value,
+            comment: commentInput.value,
+            createdAt: getCurrentTimestamp(),
+        })
         //clear add comments input value
         namaInput.value = ""
         commentInput.value = ""
@@ -94,21 +122,169 @@ function addWellWishes() {
 
 addWellWishes()
 
-//Firebase
+//Getting data
+db.collection("comments")
+    .orderBy("createdAt", "desc")
+    .get()
+    .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+            renderComment(doc)
+        })
+    })
 
-// var firebaseConfig = {
-//     apiKey: "AIzaSyCOs-b6GjL17VHcA_Te3pf1f-sZIVWcFN8",
-//     authDomain: "wedding-invitation-wisam-asri.firebaseapp.com",
-//     projectId: "wedding-invitation-wisam-asri",
-//     storageBucket: "wedding-invitation-wisam-asri.appspot.com",
-//     messagingSenderId: "321879059888",
-//     appId: "1:321879059888:web:14a38de752f86004577a75",
-// }
-// firebase.initializeApp(firebaseConfig)
+//Scroll Animation-------------------------------------------------------
+
+//Opening
+const openingText = document.querySelector(".opening-text")
+const mempelai = document.querySelector(".mempelai")
+
+window.addEventListener("scroll", openingTextAnimation)
+window.addEventListener("scroll", mempelaiAnimation)
+
+openingTextAnimation()
+mempelaiAnimation()
+function openingTextAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const openingTop = openingText.getBoundingClientRect().top
+    if (openingTop < triggerBottom) {
+        openingText.classList.add("show")
+    }
+}
+function mempelaiAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const mempelaiTop = mempelai.getBoundingClientRect().top
+    if (mempelaiTop < triggerBottom) {
+        mempelai.classList.add("show")
+    }
+}
+
+//Doa
+const doaCard = document.querySelector(".card")
+
+window.addEventListener("scroll", doaCardAnimation)
+
+doaCardAnimation()
+function doaCardAnimation() {
+    const triggerBottom = window.innerHeight / 1
+    const doaCardTop = doaCard.getBoundingClientRect().top
+    if (doaCardTop < triggerBottom) {
+        doaCard.classList.add("show")
+    }
+}
+
+//Settings
+const heroSetting = document.querySelector(".hero-setting")
+const settingCard = document.querySelectorAll(".setting-card")
+
+window.addEventListener("scroll", heroSettingAnimation)
+window.addEventListener("scroll", settingCardAnimation)
+
+heroSettingAnimation()
+settingCardAnimation()
+function heroSettingAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const heroSettingTop = heroSetting.getBoundingClientRect().top
+    if (heroSettingTop < triggerBottom) {
+        heroSetting.classList.add("show")
+    }
+}
+function settingCardAnimation() {
+    settingCard.forEach((card) => {
+        const triggerBottom = window.innerHeight / 1.5
+        const settingCardTop = card.getBoundingClientRect().top
+        if (settingCardTop < triggerBottom) {
+            card.classList.add("show")
+        }
+    })
+}
+
+//Hari bahagia
+
+const hariBahagia = document.querySelector(".hari-bahagia-card")
+
+window.addEventListener("scroll", hariBahagiaAnimation)
+
+hariBahagiaAnimation()
+function hariBahagiaAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const hariBahagiaTop = hariBahagia.getBoundingClientRect().top
+    if (hariBahagiaTop < triggerBottom) {
+        hariBahagia.classList.add("show")
+    }
+}
+
+//Gallery
+
+const galleryHero = document.querySelector(".gallery-hero")
+const galleryContainer = document.querySelector(".gallery-container")
+
+window.addEventListener("scroll", galleryHeroAnimation)
+window.addEventListener("scroll", galleryContainerAnimation)
+
+galleryHeroAnimation()
+galleryContainerAnimation()
+function galleryHeroAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const galleryHeroTop = galleryHero.getBoundingClientRect().top
+    if (galleryHeroTop < triggerBottom) {
+        galleryHero.classList.add("show")
+    }
+}
+function galleryContainerAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const galleryContainerTop = galleryContainer.getBoundingClientRect().top
+    if (galleryContainerTop < triggerBottom) {
+        galleryContainer.classList.add("show")
+    }
+}
+
+//Informasi
+
+const informasi = document.querySelector(".informasi-card")
+
+window.addEventListener("scroll", informasiAnimation)
+
+informasiAnimation()
+function informasiAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const informasiTop = informasi.getBoundingClientRect().top
+    if (informasiTop < triggerBottom) {
+        informasi.classList.add("show")
+    }
+}
+
+//Best Wishes
+
+const addWishesHero = document.querySelector(".add-wishes-hero")
+const formWishesContainer = document.querySelector(".form-container")
 
 
-// function writeData(){
-//     firebase.database().ref("Comment").set({
-//         name: 
-//     })
-// }
+window.addEventListener("scroll", addWishesHeroAnimation)
+window.addEventListener("scroll", formWishesContainerAnimation)
+window.addEventListener("scroll", addWishesCommentAnimation)
+
+addWishesHeroAnimation()
+formWishesContainerAnimation()
+addWishesCommentAnimation()
+
+function addWishesHeroAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const addWishesTop = addWishesHero.getBoundingClientRect().top
+    if (addWishesTop < triggerBottom) {
+        addWishesHero.classList.add("show")
+    }
+}
+function formWishesContainerAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const formContainerTop = formWishesContainer.getBoundingClientRect().top
+    if (formContainerTop < triggerBottom) {
+        formWishesContainer.classList.add("show")
+    }
+}
+function addWishesCommentAnimation() {
+    const triggerBottom = window.innerHeight / 1.5
+    const addWishesCommentTop = addWishesComment.getBoundingClientRect().top
+    if (addWishesCommentTop < triggerBottom) {
+        addWishesComment.classList.add("show")
+    }
+}

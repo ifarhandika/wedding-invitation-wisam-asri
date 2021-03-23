@@ -9,6 +9,10 @@
         color: black;
         text-align: center;
 
+        opacity: 0;
+        transform: translateY(100px);
+        transition: 1s;
+
         .hari-bahagia-bg {
             background: url('../img/IMG_1712.jpg');
             background-size: cover;
@@ -49,6 +53,10 @@
                 }
             }
         }
+    }
+    .hari-bahagia-card.show{
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }

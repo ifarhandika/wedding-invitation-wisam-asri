@@ -8,11 +8,23 @@
             text-align: center;
             color: beige;
             padding: 50px 0 30px 0;
+
+            opacity: 0;
+            transform: translateY(100px);
+            transition: 1s ease-in;
+        }
+        .add-wishes-hero.show{
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .form-container {
             margin: 0 auto;
             flex-direction: column;
+
+            opacity: 0;
+            transform: translateY(100px);
+            transition: 1s ease;
 
             input,
             textarea {
@@ -45,15 +57,28 @@
                 }
             }
         }
+        .form-container.show{
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .add-wishes-comment{
             text-align: center;
             margin: 0px 30px;
 
+            opacity: 0;
+            transform: translateY(100px);
+            transition: 1s ease-in;
+
             .comment-container{
                 border-top: 1px solid grey;
                 border-bottom: 1px solid grey;
             }
+        }
+
+        .add-wishes-comment.show{
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

@@ -9,6 +9,9 @@
         width: 70%;
         text-align: center;
         font-size: 20px;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: 1.5s;
         h3{
             font-size: 40px;
         }
@@ -16,12 +19,17 @@
             margin-top: 15px;
         }
     }
+    .opening-text.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
 
     .mempelai {
         margin: 0 auto;
         width: 90%;
         padding: 0 20px;
-        
+        opacity: 0;
+        transition: 1s;
         &.grid {
             grid-template-columns: 1fr 0.3fr 1fr;
         }
@@ -52,10 +60,10 @@
             font-family: "Dancing Script", cursive;
         }
     }
+    .mempelai.show{
+        opacity: 1;
+    }
 }
-
-
-
 
 
 @media screen and (max-width : 768px){
@@ -68,3 +76,4 @@
     }
     
 }
+

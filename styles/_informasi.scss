@@ -1,0 +1,37 @@
+.informasi {
+    background-image: linear-gradient(to top, $primaryColor, white);
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0;
+
+    .informasi-card {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: 1s ease-in;
+
+        .informasi-hero {
+            padding: 50px 0 30px 0;
+            h4 {
+                font-size: 30px;
+                font-family: "Lato", sans-serif;
+            }
+        }
+        .informasi-container {
+            p {
+                font-size: 20px;
+                margin-bottom: 50px;
+                padding: 0 100px;
+            }
+            span {
+                font-family: "Dancing Script", cursive;
+                font-size: 30px;
+            }
+        }
+    }
+    .informasi-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

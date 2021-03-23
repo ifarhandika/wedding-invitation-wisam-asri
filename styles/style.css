@@ -19,6 +19,7 @@
   font-family: "Dancing Script", cursive;
   color: #c7ad8a;
   text-align: center;
+  animation: mainText 3s;
 }
 
 .main .main-text h2 {
@@ -40,6 +41,15 @@
   color: #c7ad8a;
 }
 
+@keyframes mainText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .opening {
   background-color: #c7ad8a;
   color: white;
@@ -52,6 +62,9 @@
   width: 70%;
   text-align: center;
   font-size: 20px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1.5s;
 }
 
 .opening .opening-text h3 {
@@ -62,10 +75,17 @@
   margin-top: 15px;
 }
 
+.opening .opening-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .opening .mempelai {
   margin: 0 auto;
   width: 90%;
   padding: 0 20px;
+  opacity: 0;
+  transition: 1s;
 }
 
 .opening .mempelai.grid {
@@ -100,6 +120,10 @@
   font-family: "Dancing Script", cursive;
 }
 
+.opening .mempelai.show {
+  opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
   .opening .mempelai.grid {
     grid-template-columns: 1fr;
@@ -121,6 +145,9 @@
   flex-direction: column;
   color: #c7ad8a;
   text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
 }
 
 .doa .card h3 {
@@ -129,6 +156,11 @@
 
 .doa .card p {
   margin: 20px 0;
+}
+
+.doa .card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .setting {
@@ -144,11 +176,19 @@
   text-align: center;
   font-size: 20px;
   font-family: "Raleway", sans-serif;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease;
 }
 
 .setting .hero-setting h4 {
   color: #c7ad8a;
   font-size: 30px;
+}
+
+.setting .hero-setting.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .setting .container {
@@ -169,6 +209,9 @@
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease-in;
 }
 
 .setting .container .setting-card .line {
@@ -205,6 +248,11 @@
   background-color: #6b5d4a;
 }
 
+.setting .container .setting-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media screen and (max-width: 768px) {
   .setting .container.grid {
     grid-template-columns: 1fr;
@@ -225,6 +273,9 @@
   flex-direction: column;
   color: black;
   text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
 }
 
 .hari-bahagia .hari-bahagia-card .hari-bahagia-bg {
@@ -272,6 +323,11 @@
   margin: 10px 0;
 }
 
+.hari-bahagia .hari-bahagia-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media screen and (max-width: 560px) {
   .hari-bahagia .hari-bahagia-card .hari-bahagia-text .time .box {
     margin: 10px 10px 50px 10px;
@@ -286,12 +342,23 @@
 .gallery-collection .gallery-hero {
   color: #c7ad8a;
   padding: 50px 0 30px 0;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease-in-out;
+}
+
+.gallery-collection .gallery-hero.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-collection .gallery-container {
   background-color: #c7ad8a;
   border-radius: 20px;
   margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease;
 }
 
 .gallery-collection .gallery-container .carousel .carousel-inner .carousel-item img {
@@ -299,6 +366,49 @@
   /* or any custom size */
   height: 500px;
   object-fit: contain;
+}
+
+.gallery-collection .gallery-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.informasi {
+  background-image: linear-gradient(to top, #c7ad8a, white);
+  flex-direction: column;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.informasi .informasi-card {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease-in;
+}
+
+.informasi .informasi-card .informasi-hero {
+  padding: 50px 0 30px 0;
+}
+
+.informasi .informasi-card .informasi-hero h4 {
+  font-size: 30px;
+  font-family: "Lato", sans-serif;
+}
+
+.informasi .informasi-card .informasi-container p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  padding: 0 100px;
+}
+
+.informasi .informasi-card .informasi-container span {
+  font-family: "Dancing Script", cursive;
+  font-size: 30px;
+}
+
+.informasi .informasi-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .add-wishes {
@@ -313,11 +423,22 @@
   text-align: center;
   color: beige;
   padding: 50px 0 30px 0;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease-in;
+}
+
+.add-wishes .add-wishes-container .add-wishes-hero.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .add-wishes .add-wishes-container .form-container {
   margin: 0 auto;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease;
 }
 
 .add-wishes .add-wishes-container .form-container input,
@@ -354,9 +475,17 @@
   background-color: #dadac2;
 }
 
+.add-wishes .add-wishes-container .form-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .add-wishes .add-wishes-container .add-wishes-comment {
   text-align: center;
   margin: 0px 30px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s ease-in;
 }
 
 .add-wishes .add-wishes-container .add-wishes-comment .comment-container {
@@ -364,10 +493,16 @@
   border-bottom: 1px solid grey;
 }
 
+.add-wishes .add-wishes-container .add-wishes-comment.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .designed-by {
   height: 20vh;
   background-color: #c7ad8a;
   text-align: center;
+  font-size: 15px;
 }
 
 * {
