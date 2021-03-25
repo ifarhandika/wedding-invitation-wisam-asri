@@ -282,7 +282,7 @@ function formWishesContainerAnimation() {
     }
 }
 function addWishesCommentAnimation() {
-    const triggerBottom = window.innerHeight / 1.5
+    const triggerBottom = window.innerHeight / 1
     const addWishesCommentTop = addWishesComment.getBoundingClientRect().top
     if (addWishesCommentTop < triggerBottom) {
         addWishesComment.classList.add("show")

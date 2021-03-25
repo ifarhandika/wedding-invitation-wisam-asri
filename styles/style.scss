@@ -53,6 +53,13 @@ $secondaryColor: #c7ad8a;
     align-items: center;
 }
 
+a{
+    &:hover{
+        text-decoration: none;
+    }
+    
+}
+
 
 //Audio btn
 

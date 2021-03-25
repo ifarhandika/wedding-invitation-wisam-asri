@@ -406,6 +406,10 @@
   font-size: 30px;
 }
 
+.informasi .informasi-card .informasi-container .link-livestream a {
+  color: black;
+}
+
 .informasi .informasi-card.show {
   opacity: 1;
   transform: translateY(0);
@@ -537,6 +541,10 @@
   display: grid;
   justify-content: center;
   align-items: center;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .audio-btn {
